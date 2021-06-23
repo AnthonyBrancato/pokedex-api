@@ -1,6 +1,6 @@
-# How to set up
+# Clone the repo
 
-=> You need to create a directory and a sub-directory.
+## yarn && yarn dev
 
-Directory: 'data'
-Sub-directory: 'first-generation'
+## Database
+You need to create a ```.env``` file with your own credentials.
