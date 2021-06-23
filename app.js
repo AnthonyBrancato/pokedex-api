@@ -1,4 +1,3 @@
-require("dotenv").config();
 const express = require("express");
 const logger = require("morgan");
 const helmet = require("helmet");
@@ -10,7 +9,7 @@ const app = express();
 
 app.use(logger("dev"));
 app.use(helmet());
-// app.use(pino());
+app.use(pino());
 
 app.use("/api/pokemons", pokemonsRouter);
 
