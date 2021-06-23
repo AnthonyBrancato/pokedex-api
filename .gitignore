@@ -1,7 +1,10 @@
 /node_modules
 /data
 
-.env.*
+.env
+.env.local
+.env.development
+.env.production
 
 yarn.lock
 package.lock

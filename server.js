@@ -1,8 +1,10 @@
-require('dotenv').config()
+/* require('dotenv').config()
 const express = require("express");
 const logger = require("morgan");
 const fetch = require("node-fetch");
 const fs = require("fs");
+const path = require('path')
+const cache = require('memory-cache')
 const app = express();
 
 const PORT = process.env.PORT || 3200;
@@ -17,6 +19,7 @@ app.get("/create-first-gen", (req, res) => {
   for(let i = 0; i < firstGen; i++) {
     fetch(`${API_URL}${i}`)
       .then(response => response.json())
+      .then(new Promise(resolve => setTimeout(resolve, 1000)))
       .then(data => {
         let pokemonObj = {
           name: data.name,
@@ -31,11 +34,13 @@ app.get("/create-first-gen", (req, res) => {
     res.end()
 });
 
-app.get('/pokemons', (req,res) => {
-  res.end()
+app.get('/pokemons/first-gen', (req,res) => {
+  res.setHeader('Content-Type', 'application/json')
+  res.status(200).sendFile(path.resolve('./data/firstGeneration.json'))
 })
 
 app.get('/pokemons/:name', (req, res) => {
+  res.setHeader('Content-Type', 'application/json')
   res.status(200).sendFile(__dirname + `/data/${req.params.name}.json`)
 })
 
@@ -48,3 +53,4 @@ app.get("*", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server starts at http://localhost:${PORT}/`);
 });
+ */
