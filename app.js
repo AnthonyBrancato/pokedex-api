@@ -17,6 +17,10 @@ app.use(compression())
 
 app.use("/api/pokemons", pokemonsRouter);
 
+app.get('/', (req, res) => {
+  res.json({ message: 'Worked.' })
+})
+
 // errors handler
 app.get("*", function (req, res) {
   const error = new Error(`${req.ip} tried to access ${req.originalUrl}`);
