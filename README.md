@@ -1,3 +1,5 @@
+[![Node.js CI](https://github.com/AnthonyBrancato/pokedex-api/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/AnthonyBrancato/pokedex-api/actions/workflows/node.js.yml)
+
 # Clone the repo
 
 ## yarn && yarn dev
